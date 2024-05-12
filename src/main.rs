@@ -45,4 +45,12 @@ fn main() {
     io::stdin().read_line(&mut input_string).expect("입력에 실패하였습니다.");
     let parse_input: u32 = input_string.trim().parse().expect("숫자 형식이 올바르지 않습니다. u32");
     control_flow::if_and_else_if(parse_input);
+
+    let check_condition = control_flow::check_condition(parse_input > 16);
+    println!("{}", check_condition);
+
+    control_flow::use_loop();
+    control_flow::use_while();
+    control_flow::use_for();
+    control_flow::use_limit_for();
 }
