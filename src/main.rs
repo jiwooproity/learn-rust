@@ -4,6 +4,7 @@ use std::io;
 mod variables;
 mod calculate;
 mod types;
+mod control_flow;
 
 fn main() {
     // 출력 구문
@@ -30,9 +31,18 @@ fn main() {
     types::integer();
     types::array();
 
+    // 계산 함수
+    calculate::integer_calc();
+
     let result_circle = calculate::circle_area(0.4);
     println!("0.4의 면적을 가진 원의 면적은 {result_circle}입니다.");
 
     let add_result = calculate::add_numbers(1, 3);
     println!("a + b = {add_result}입니다.");
+
+    // 제어문 if, if else
+    let mut input_string = String::new();
+    io::stdin().read_line(&mut input_string).expect("입력에 실패하였습니다.");
+    let parse_input: u32 = input_string.trim().parse().expect("숫자 형식이 올바르지 않습니다. u32");
+    control_flow::if_and_else_if(parse_input);
 }

@@ -8,9 +8,9 @@ pub fn integer() {
     // i8, i16, i32, i64, i128, size
     // u8, u16, u32, u64, u128
 
-    print!("i8_01 = {i8_01}");
-    print!("i8_02 = {i8_02}");
-    print!("u8_01 = {u8_01}");
+    println!("i8_01 = {i8_01}");
+    println!("i8_02 = {i8_02}");
+    println!("u8_01 = {u8_01}");
 }
 
 pub fn array() {
