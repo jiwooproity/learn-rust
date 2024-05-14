@@ -26,9 +26,10 @@ fn main() {
     variables::shadowing();
 
     // 타입
+    types::integer();
+    types::char();
     types::float();
     types::tuple();
-    types::integer();
     types::array();
 
     // 계산 함수

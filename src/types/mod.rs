@@ -3,6 +3,7 @@ pub fn integer() {
     let i8_02: i8 = -8;
 
     let u8_01: u8 = 8;
+
     // let u8_02: u8 = -8; 부호 불가능
 
     // i8, i16, i32, i64, i128, size
@@ -11,6 +12,27 @@ pub fn integer() {
     println!("i8_01 = {i8_01}");
     println!("i8_02 = {i8_02}");
     println!("u8_01 = {u8_01}");
+}
+
+pub fn char() {
+    // String
+    let name: String = "sojiwoo".to_string();
+    println!("My name is {name}");
+
+    // &str
+    let company = "toss";
+    println!("i hope to join the {company}");
+    
+    // char
+    let character: char = 'A';
+    let unicode: u32 = 0x41;
+    println!("{}의 유니코드는 {:#0x}입니다.", character, unicode);
+
+    // scalar unicode convert
+    let get_char: char = char::from_u32(unicode).unwrap();
+    println!("{:#0x}의 유니코드를 문자로 표현하면 {}입니다.", unicode, get_char);
+
+    println!("[{progress:>0width$}]", progress="###", width=10);
 }
 
 pub fn array() {
