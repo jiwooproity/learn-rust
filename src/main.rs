@@ -5,6 +5,7 @@ mod variables;
 mod calculate;
 mod types;
 mod control_flow;
+mod memo_ownership;
 
 fn main() {
     // 출력 구문
@@ -54,4 +55,7 @@ fn main() {
     control_flow::use_while();
     control_flow::use_for();
     control_flow::use_limit_for();
+
+    // 메모리 관리 규칙 | 소유권
+    memo_ownership::memo_ownership();
 }

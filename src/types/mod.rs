@@ -17,7 +17,7 @@ pub fn integer() {
 pub fn char() {
     // String
     let name: String = "sojiwoo".to_string();
-    println!("My name is {name}");
+    println!("My name is {}", name.to_owned());
 
     // &str
     let company = "toss";
@@ -60,7 +60,7 @@ pub fn array() {
     let three_hundred_value = create_arr[size - 1];
 
     println!("생성된 배열의 크기: {size}");
-    println!("{size}번째 배열의 값: {three_hundred_value}")
+    println!("{size}번째 배열의 값: {three_hundred_value}");
 }
 
 pub fn float() {
