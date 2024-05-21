@@ -88,12 +88,9 @@ cargo new rust_project
 
 ```
 [package]
-name = "rust_project"
+name = "learn-rust"
 version = "0.1.0"
-authors = ["SongKJ00 <gowithdsm@gmail.com>"]
-edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+edition = "2021"
 
 [dependencies]
 // 디펜던시!
