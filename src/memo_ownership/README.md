@@ -46,8 +46,9 @@ Java, JavaScript의 GC가 JVM, JavaScript V8 Engine에 의해 자동으로 메�
 
 ```
 fn main() {
-  let a = String::from("Hello"); // String 타입 "Hello" 할당
-  let b = a; // a의 값은 b에 할당
+  let a: String = String::from("Hello"); // String 타입 "Hello" 할당
+  let b: String = a; // a의 값은 b에 할당
+
   // println!("a = {}", a); // Error: value borrowed here after move
   println!("b = {}", b); // "b = Hello"
 }
@@ -66,3 +67,28 @@ Heap 객체는 이곳 저곳 바인딩되거나 변경이 될 수가 있는데, 
 이러한 소유권 개념을 통해 Rust는 컴파일 타임에 어느 참조가 해제가 되어야 하는 지를 파악하고 drop을 통해 invalid 처리를 진행하며 메모리 관리를 합니다.
 
 따라서, Rust의 소유권 개념으로 메모리, 스레드의 안정성이 보장되는 것이라고 볼 수 있습니다.
+
+## Rust 인수 전달
+
+Rust에서 함수 인수로 전달하여 사용될 경우 함수에게 소유권이 넘겨져 더 이상 사용이 불가능한 invalid 변수가 발생할 수 있습니다.
+
+이러한 처리는 어떻게 관리하면 좋을까? 아래 코드로 살펴보자
+
+```
+fn main() {
+  let a: i32 = 5;
+
+  let b = add_calc(a); // 반환된 값을 다시 새로운 변수 b에 할당하여 소유권 흭득
+}
+
+fn add_calc(a: i32) -> i32 {
+  a // 세미콜론 ( ; ) 을 제외하면 Rust에서는 값을 리턴하는 표현식으로서 값을 반환한다.
+}
+```
+
+이처럼 add_calc() 함수로 넘어간 소유권은 따로 반환하지 않고 사용하게 된다면 add_calc() 함수의 블록을 빠져나오게 될 경우 <code>drop</code> 되게 된다.
+
+하지만, 소유권을 함수로 넘겼던 변수를 계속 사용해야 하는 경우, 해당 함수 안에서 Expression을 통해 값을 반환하고 새로운 값에 할당하여 소유권을 얻으면 된다.
+
+**Statement** 값을 리턴하지 않는 문장이다.
+**Expression** 값을 리턴하는 수식을 의미한다.
