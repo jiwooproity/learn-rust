@@ -120,3 +120,72 @@ pub fn many_ampersand_mut() {
 // 1. 참조로 소유권을 넘기지 않고 데이터에 접근
 // 2. 딱 하나의 변경 가능 참조가 있거나, 불변 참조를 여러 개 활용 가능
 // * 불변 참조가 하나라도 선언되는 순간 그 전 일반 불변 참조 값은 사용 불가능
+
+pub fn use_slice() {
+    let s = String::from("안녕");
+
+    let len = s.len(); // 6
+
+    let first = &s[0..3];
+    let second = &s[3..len];
+
+    println!("len = {}, first = {}, second = {}", len, first, second);
+
+    // 생략
+    let first = &s[..len]; // 처음부터 3번째까지
+    let second = &s[3..]; // 3번째부터 끝까지
+
+    println!("len = {}, first = {}, second = {}", len, first, second);
+
+    // 전체
+    let all = &s[..]; // or len ( 전체 길이만큼 )
+    println!("all = {}", all);
+
+    let str = String::from("글 자");
+    let first = first_word(&str);
+
+    // &str은 결국 문자열 슬라이스이며 어딘가에 저장되어 있고, 해당 식별 값을 참조하는 형태
+    // String은 데이터의 크기 변화나 변경이 가능한 형태로 Heap 메모리 영역에서 관리된다.
+
+    fn first_word(s: &str) -> &str {
+        let bytes = s.as_bytes();
+
+        // println!("iter, enumerate = {:?}", {
+        //     let mut iterator = bytes.iter().enumerate();
+        //     iterator.next().;
+        // });
+
+        // iter 반복자 ierator를 생성하여 컬렉션의 각 요소를 반환.
+        // 반환되는 각 요소를 enumerat 메서드로 튜플의 일부로 반환한다.
+        for(i, &item) in bytes.iter().enumerate() {
+            // if item == 0x20 {
+            //     return &s[0..i];
+            // }
+
+            // if item == 32 {
+            //     return &s[0..i];
+            // }
+
+            if item == b' ' {
+                return &s[0..i];
+            }
+        }
+
+        &s[0..]
+    }
+
+    println!("{}", first);
+}
+
+pub fn other_slice() {
+    let a = [1, 2, 3, 4, 5];
+    let slice = &a[1..3];
+    println!("a = {:?}", slice);
+}
+
+// 소유권과 임대 정리
+// 1. Rust가 안전하고 빠른 프로그램을 만들게 함
+// 2. 컴파일러가 엄격히 검사하는 메모리 관리 규칙
+// 3. 규칙을 잘 따르면 메모리 해제는 컴파일러가 자동으로
+// 4. 소유권 이전과 임대 개념
+// 5. 슬라이스로 일부영역 참조도 편리하게

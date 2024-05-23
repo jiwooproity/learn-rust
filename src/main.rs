@@ -62,4 +62,6 @@ fn main() {
     ownership::immutable();
     ownership::many_ampersand();
     ownership::many_ampersand_mut();
+    ownership::use_slice();
+    ownership::other_slice();
 }
