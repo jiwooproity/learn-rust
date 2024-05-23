@@ -5,7 +5,7 @@ mod variables;
 mod calculate;
 mod types;
 mod control_flow;
-mod memo_ownership;
+mod ownership;
 
 fn main() {
     // 출력 구문
@@ -57,5 +57,9 @@ fn main() {
     control_flow::use_limit_for();
 
     // 메모리 관리 규칙 | 소유권
-    memo_ownership::memo_ownership();
+    ownership::ownership();
+    ownership::borrowing();
+    ownership::immutable();
+    ownership::many_ampersand();
+    ownership::many_ampersand_mut();
 }
