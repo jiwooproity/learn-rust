@@ -6,6 +6,7 @@ mod calculate;
 mod types;
 mod control_flow;
 mod ownership;
+mod struct_define;
 
 fn main() {
     // 출력 구문
@@ -64,4 +65,12 @@ fn main() {
     ownership::many_ampersand_mut();
     ownership::use_slice();
     ownership::other_slice();
+
+    // Struct: 구조체 정의
+    struct_define::struct_one();
+    struct_define::struct_new();
+    struct_define::tuple_struct();
+    struct_define::struct_example();
+    struct_define::struct_example_2();
+    struct_define::struct_method();
 }
