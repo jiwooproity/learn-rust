@@ -7,6 +7,7 @@ mod types;
 mod control_flow;
 mod ownership;
 mod struct_define;
+mod conv_binary;
 
 fn main() {
     // 출력 구문
@@ -73,4 +74,7 @@ fn main() {
     struct_define::struct_example();
     struct_define::struct_example_2();
     struct_define::struct_method();
+    struct_define::struct_vector();
+    
+    conv_binary::convert_binary();
 }

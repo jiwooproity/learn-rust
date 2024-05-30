@@ -148,3 +148,43 @@ pub fn struct_method() {
     println!("반지름이 10인 원의 둘레 = {}", circle.calc_round());
     dbg!(&circle);
 }
+
+struct Vector3 {
+    x: i32,
+    y: i32,
+    z: i32
+}
+
+impl Vector3 {
+    fn get_tuple(&self) -> (i32, i32, i32) {
+        (self.x, self.y, self.z)
+    }
+
+    fn up(&mut self) {
+        self.y = self.y + 50;
+    }
+
+    fn down(&mut self) {
+        self.y = self.y - 50;
+    }
+}
+
+pub fn struct_vector() {
+    let mut vector3 = Vector3 {
+        x: 50,
+        y: 100,
+        z: 51,
+    };
+
+    vector3.up();
+
+    let (x, y, z) = vector3.get_tuple();
+
+    println!("x = {}, y = {}, z = {}", x, y, z);
+
+    vector3.down();
+
+    let (x, y, z) = vector3.get_tuple();
+
+    println!("x = {}, y = {}, z = {}", x, y, z);
+}
