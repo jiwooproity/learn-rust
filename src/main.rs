@@ -8,6 +8,7 @@ mod control_flow;
 mod ownership;
 mod struct_define;
 mod conv_binary;
+mod enum_define;
 
 fn main() {
     // 출력 구문
@@ -76,6 +77,10 @@ fn main() {
     struct_define::struct_example_2();
     struct_define::struct_method();
     struct_define::struct_vector();
+    struct_define::control_two_number(30, 12);
+    struct_define::control_two_number(12, 5);
     
     conv_binary::convert_binary();
+
+    enum_define::enum_print();
 }

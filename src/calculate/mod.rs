@@ -25,6 +25,6 @@ pub fn integer_calc() {
     println!("d: {d}");
 }
 
-pub fn multiple(a: i8, b: i8) -> i8 {
+pub fn multiple(a: i32, b: i32) -> i32 {
     a * b
 }

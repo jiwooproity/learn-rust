@@ -188,3 +188,35 @@ pub fn struct_vector() {
 
     println!("x = {}, y = {}, z = {}", x, y, z);
 }
+
+struct ControlTwoNumber {
+    a: u32,
+    b: u32
+}
+
+impl ControlTwoNumber {
+    fn add(self: &ControlTwoNumber) -> u32 {
+        self.a + self.b
+    }
+
+    fn minus(self: &ControlTwoNumber) -> u32 {
+        if self.a > self.b {
+            self.a - self.b
+        } else {
+            self.b - self.a
+        }
+    }
+
+    fn multi(&self) -> u32 {
+        self.a * self.b
+    }
+}
+
+pub fn control_two_number(a: u32, b: u32) {
+    let two_number_struct = ControlTwoNumber { a, b };
+    let add = two_number_struct.add();
+    let minus = two_number_struct.minus();
+    let multi = two_number_struct.multi();
+
+    println!("add = {}, minus = {}, multi = {}", add, minus, multi);
+}
