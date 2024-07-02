@@ -37,6 +37,7 @@ fn main() {
 
     // 계산 함수
     calculate::integer_calc();
+    calculate::multiple(-127, 126);
 
     let result_circle = calculate::circle_area(0.4);
     println!("0.4의 면적을 가진 원의 면적은 {result_circle}입니다.");
