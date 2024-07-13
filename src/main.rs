@@ -79,6 +79,7 @@ fn main() {
     struct_define::struct_vector();
     struct_define::control_two_number(30, 12);
     struct_define::control_two_number(12, 5);
+    struct_define::control_counter(32);
     
     conv_binary::convert_binary();
 

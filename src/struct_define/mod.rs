@@ -220,3 +220,19 @@ pub fn control_two_number(a: u32, b: u32) {
 
     println!("add = {}, minus = {}, multi = {}", add, minus, multi);
 }
+
+struct Counter {
+    number: i32
+}
+
+impl Counter {
+    fn add(self: &Counter, b: i32) -> i32 {
+        self.number + b
+    }
+}
+
+pub fn control_counter(number: i32) {
+    let counter_struct: Counter = Counter { number };
+    let more_add = counter_struct.add(number); // 64?
+    println!("number + a = {}", more_add);
+}
