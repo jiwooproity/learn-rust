@@ -82,6 +82,7 @@ fn main() {
     struct_define::control_counter(32);
     
     conv_binary::convert_binary();
+    conv_binary::use_binary_struct(2);
 
     enum_define::enum_print();
 }

@@ -24,3 +24,19 @@ pub fn convert_binary() {
     let get_binary = binary(parse);
     println!("{}", get_binary);
 }
+
+struct Binary {
+    number: i64
+}
+
+impl Binary {
+    fn convert(self: &Binary) -> String {
+        binary(self.number)
+    }
+}
+
+pub fn use_binary_struct(number: i64) {
+    let binary_struct = Binary { number };
+    let get_binary = binary_struct.convert();
+    println!("{} to binary = {}", number, get_binary);
+}
