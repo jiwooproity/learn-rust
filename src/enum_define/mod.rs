@@ -14,3 +14,19 @@ pub fn enum_print() {
     println!("red == green => {}", red == green);
     println!("red == Color::Red => {}", red == Color::Red);
 }
+
+enum Role {
+    Admin,
+    Guest,
+    Read
+}
+
+pub fn enum_role(role_number: u8) -> Role {
+    if role_number == 1 {
+        Role::Admin
+    } else if role_number == 2 {
+        Role::Guest
+    } else {
+        Role::Read
+    }
+}

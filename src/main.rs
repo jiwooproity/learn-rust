@@ -85,4 +85,5 @@ fn main() {
     conv_binary::use_binary_struct(2);
 
     enum_define::enum_print();
+    // enum_define::enum_role(1);
 }
