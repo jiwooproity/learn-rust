@@ -15,7 +15,7 @@ pub fn enum_print() {
     println!("red == Color::Red => {}", red == Color::Red);
 }
 
-enum Role {
+pub enum Role {
     Admin,
     Guest,
     Read

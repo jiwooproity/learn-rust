@@ -80,10 +80,14 @@ fn main() {
     struct_define::control_two_number(30, 12);
     struct_define::control_two_number(12, 5);
     struct_define::control_counter(32);
+
+    let car_name: &str = "Aventador";
+    let max_speed = struct_define::calc_max_speed(car_name, 220);
+    println!("{}'s max speed is {}", car_name, max_speed);
     
     conv_binary::convert_binary();
     conv_binary::use_binary_struct(2);
 
     enum_define::enum_print();
-    // enum_define::enum_role(1);
+    enum_define::enum_role(1);
 }

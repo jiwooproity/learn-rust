@@ -236,3 +236,21 @@ pub fn control_counter(number: i32) {
     let more_add = counter_struct.add(number); // 64?
     println!("number + a = {}", more_add);
 }
+struct Car {
+    name: &'static str,
+    speed: i32,
+    class: char
+}
+
+impl Car {
+    fn get_max_speed(&self) -> i32 {
+        self.speed * 2
+    }
+}
+
+pub fn calc_max_speed(name: &'static str, speed: i32) -> i32 {
+    let car = Car { name, speed, class: 'S' };
+    let max_speed = car.get_max_speed();
+    println!("Car name is {}, and class {}", car.name, car.class);
+    max_speed
+}
