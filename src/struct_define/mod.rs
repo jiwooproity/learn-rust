@@ -252,5 +252,17 @@ pub fn calc_max_speed(name: &'static str, speed: i32) -> i32 {
     let car = Car { name, speed, class: 'S' };
     let max_speed = car.get_max_speed();
     println!("Car name is {}, and class {}", car.name, car.class);
+
+    let string_data: &str = "Hi";
+    let binary_string = string_data.as_bytes();
+
+    let mut string_return = String::new();
+
+    for(_i, _item) in binary_string.iter().enumerate() {
+        string_return.push_str(&string_data[_i.._i + 1]);
+    };
+
+    println!("{}", string_return);
+
     max_speed
 }
