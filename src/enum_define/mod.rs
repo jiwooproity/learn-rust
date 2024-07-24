@@ -50,4 +50,5 @@ pub fn game_message() {
 pub fn option_generic() {
     let some_number = Some(2);
     let absent_number: Option<i32> = None; // Null이 없고, 빈 값으로 인한 시스템 오류가 발생하지 않게 처리할 수 있다.
+    println!("{:#?}, {:#?}", some_number, absent_number);
 }
