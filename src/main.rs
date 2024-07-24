@@ -90,4 +90,6 @@ fn main() {
 
     enum_define::enum_print();
     enum_define::enum_role(1);
+    enum_define::game_message();
+    enum_define::option_generic();
 }
